@@ -3,7 +3,7 @@ import Header from "./Header"
 
 const Main = (): JSX.Element => {
   return (
-    <div className="text-200">
+    <div className="text-base text-center">
       <Header />
       Main
       <Footer />
