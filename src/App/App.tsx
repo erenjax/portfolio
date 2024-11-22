@@ -1,4 +1,4 @@
-import './App.css'
+import "./tailwind.css"
 
 const App = ():JSX.Element =>  {
   return (
