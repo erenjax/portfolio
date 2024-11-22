@@ -1,12 +1,9 @@
-import Footer from "./Footer"
-import Header from "./Header"
+import Home from "./Home"
 
 const Main = (): JSX.Element => {
   return (
     <div className="text-200">
-      <Header />
-      Main
-      <Footer />
+      <Home />
     </div>
   )
 }

@@ -1,9 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["./src/**/*.{ts,tsx}", "./public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        "xl": "64px",
+      },
+      colors: {
+        customBlack: "#080708",
+        customWhite: "#F8EFEB",
+        accent: {
+          blue: "#3B60E4",
+          purple: {
+            light: "#7765E3",
+            dark: "#4C1945",
+          }
+        },
+      }
+    },
   },
   plugins: [],
 }
-
