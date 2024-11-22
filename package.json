@@ -18,7 +18,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tsc:watch": "tsc --watch",
+    "tsc": "tsc",
+    "prettier": "prettier -l '**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "prep": "npm run format && npm run lint:fix"
   },
   "eslintConfig": {
     "extends": [
