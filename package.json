@@ -12,14 +12,20 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "typescript": "^5.6.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tsc:watch": "tsc --watch",
+    "tsc": "tsc",
+    "prettier": "prettier -l '**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "prep": "npm run format && npm run lint:fix"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.15",
+    "typescript": "^4.9.5"
   }
 }
