@@ -19,6 +19,7 @@ const Main = (): JSX.Element => {
         </Routes>
       </div>
     </Router>
+
   )
 }
 
