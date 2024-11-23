@@ -4,8 +4,17 @@ module.exports = {
     "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
+    fontSize: {
+      sm: ['16px', '24px'],
+      base: ['24px', '40px'],
+      md: ['32px', '48px'],
+      lg: ['64px', '72px']
+    },
     extend: {
       borderRadius: {
+        "sm": "16px",
+        "md": "24px",
+        "lg": "32px",
         "xl": "64px",
       },
       colors: {
