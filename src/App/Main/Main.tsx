@@ -11,7 +11,7 @@ const Main = (): JSX.Element => {
   const location = useLocation()
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {location.pathname !== "/" && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
