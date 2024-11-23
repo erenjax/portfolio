@@ -12,6 +12,9 @@ module.exports = {
     },
     extend: {
       borderRadius: {
+        "sm": "16px",
+        "md": "24px",
+        "lg": "32px",
         "xl": "64px",
       },
       colors: {

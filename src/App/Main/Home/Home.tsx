@@ -1,11 +1,9 @@
+import cn from "classnames"
 import { useNavigate } from "react-router-dom"
 
 const Home = (): JSX.Element => {
   const navigate = useNavigate()
 
-  const handleOnClickProjects = (): void => {
-    navigate("projects")
-  }
   const handleOnClickExperience = (): void => {
     navigate("experience")
   }
@@ -13,37 +11,63 @@ const Home = (): JSX.Element => {
     navigate("about")
   }
 
+  const projectsAnimation =
+    "group-hover/projects:translate-y-0  duration-2000 transition-all ease-in-out"
+  const subProjectTextClass =
+    "translate-y-[200%] sm:translate-y-[100%] group-hover/projects:visible opacity-0 group-hover/projects:opacity-100 pl-8 hover:text-customBlack sm:hover:text-accent-purple-light"
+
   return (
-    <div className="flex flex-col w-screen h-screen bg-customBlack text-customWhite px-32 py-16">
+    <div className="flex flex-col w-screen h-screen bg-customBlack text-customWhite px-6 md:px-16 xl:px-[141px] py-16">
       <div className="flex w-full h-1/2 justify-center">
-        <p className="self-center text-lg">Emily Ren Jackson</p>
+        <p className="self-center text-base md:text-lg">Emily Ren Jackson</p>
       </div>
 
-      <div className="flex flex-row w-full h-1/2 text-md">
-        <div className="flex w-1/2 h-full rounded-xl bg-accent-blue p-8"></div>
-        <div className="flex flex-col w-1/2">
+      <div className="flex flex-row w-full h-1/2 text-base sm:text-md">
+        <div className="flex w-1/2 h-full bg-accent-blue p-8 rounded-xl hidden sm:inline"></div>
+        <div className="flex flex-col w-full sm:w-1/2">
           <div className="flex flex-row h-1/2">
             <button
-              className="flex w-1/2 h-full bg-customWhite rounded-xl text-customBlack p-8 hover:bg-customBlack border-4 border-customWhite hover:text-customWhite hover:ease-in duration-300"
+              className="sm-customWhite-button-animation sm:customWhite-button-animation"
               onClick={handleOnClickExperience}
             >
               <p className="self-end">experience</p>
             </button>
             <button
-              className="flex w-1/2 h-full bg-accent-purple-dark rounded-xl p-8 hover:bg-customBlack border-4 border-accent-purple-dark hover:ease-in duration-300"
+              className="sm-accent-purple-dark-button-animation sm:accent-purple-dark-button-animation"
               onClick={handleOnClickAbout}
             >
               <p className="self-end">about</p>
             </button>
           </div>
-          <button className="group/projects flex flex-col justify-end h-1/2 w-full bg-accent-purple-light rounded-xl p-8 hover:ease-in duration-300 hover:bg-customBlack border-4 border-accent-purple-light">
-            <p className="translate-y-[200%] group-hover/projects:translate-y-0 durration-2000 ease-in-out transition-all">
+          <button
+            className={cn(
+              "group/projects sm-accent-purple-light-button-animation sm:accent-purple-light-button-animation",
+            )}
+          >
+            <p
+              className={cn(
+                "translate-y-[130%] lg:translate-y-[200%]",
+                projectsAnimation,
+              )}
+            >
               projects
             </p>
-            <p className="translate-y-[100%] group-hover/projects:translate-y-0 group-hover/projects:visible opacity-0 group-hover/projects:opacity-100 transition-all duration-2000 ease-in-out pl-8 hover:text-accent-purple-light">
+            <p
+              className={cn(
+                "text-sm md:text-base lg:text-md",
+                subProjectTextClass,
+                projectsAnimation,
+              )}
+            >
               professional & semi professional
             </p>
-            <p className="translate-y-[100%] group-hover/projects:translate-y-0 group-hover/projects:visible opacity-0 group-hover/projects:opacity-100 transition-all duration-2000 ease-in-out pl-8 hover:text-accent-purple-light">
+            <p
+              className={cn(
+                "text-sm md:text-base lg:text-md",
+                subProjectTextClass,
+                projectsAnimation,
+              )}
+            >
               graphic design & digital art
             </p>
           </button>

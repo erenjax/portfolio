@@ -1,10 +1,34 @@
 /* src/tailwind.css */
 
-/* Tailwind's base styles */
 @tailwind base;
-
-/* Tailwind's component styles */
 @tailwind components;
-
-/* Tailwind's utility classes */
 @tailwind utilities;
+
+@layer components {
+
+/* Home Page Components */
+
+  .sm-accent-purple-light-button-animation {
+    @apply  flex flex-col justify-end h-1/2 w-full bg-accent-purple-light rounded-lg p-4 duration-300 border-4 border-accent-purple-light
+  }
+
+  .accent-purple-light-button-animation {
+    @apply  flex flex-col justify-end h-1/2 w-full bg-accent-purple-light rounded-xl p-8 hover:ease-in duration-300 hover:bg-customBlack border-4 border-accent-purple-light
+  }
+
+  .sm-accent-purple-dark-button-animation {
+    @apply flex w-1/2 h-full bg-accent-purple-dark rounded-lg p-4 border-4 border-accent-purple-dark duration-300
+  }
+
+  .accent-purple-dark-button-animation {
+    @apply flex w-1/2 h-full bg-accent-purple-dark rounded-xl p-8 hover:bg-customBlack border-4 border-accent-purple-dark hover:ease-in duration-300
+  }
+
+  .sm-customWhite-button-animation {
+    @apply flex w-1/2 h-full bg-customWhite rounded-lg text-customBlack p-4 border-4 border-customWhite duration-300
+  }
+
+  .customWhite-button-animation {
+    @apply flex w-1/2 h-full bg-customWhite rounded-xl text-customBlack p-8 hover:bg-customBlack border-4 border-customWhite hover:text-customWhite hover:ease-in duration-300
+  }
+}
