@@ -2,9 +2,8 @@ import { Routes, Route, useLocation } from "react-router-dom"
 
 import Header from "./Header"
 import Projects from "./Projects"
-import Additional from "./Additional"
+import Experience from "./Experience"
 import About from "./About"
-import Contact from "./Contact"
 import Home from "./Home"
 
 const Main = (): JSX.Element => {
@@ -16,9 +15,8 @@ const Main = (): JSX.Element => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="projects" element={<Projects />} />
-        <Route path="additional" element={<Additional />} />
+        <Route path="experience" element={<Experience />} />
         <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
       </Routes>
     </div>
   )
