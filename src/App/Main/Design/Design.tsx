@@ -25,12 +25,12 @@ const Design = (): JSX.Element => {
   }
 
   return (
-    <div className="flex flex-col w-screen bg-customBlack min-h-screen px-6 md:px-16 xl:px-[174px]">
+    <div className="flex flex-col w-screen bg-customBlack min-h-screen px-6 md:px-16 xl:px-[174px] overflow-auto">
       <button
         className="flex w-full justify-start py-4"
         onClick={handleOnClickTitle}
       >
-        <p className="text-lg text-customWhite">Graphic Design & Digital Art</p>
+        <p className="text-md md:text-lg text-customWhite">Design Projects</p>
       </button>
       {!isProjectOpen && (
         <div className="flex flex-row text-customWhite text-base py-4">

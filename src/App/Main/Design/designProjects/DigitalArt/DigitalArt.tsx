@@ -22,8 +22,8 @@ const DigitalArt = (): JSX.Element => {
   }
 
   const activeClass =
-    "bg-[#42113C] px-8 py-4 rounded-full border-1 border-customWhite border"
-  const inactiveClass = "px-8 py4"
+    "bg-[#42113C] px-4 py-2 md:px-8 md:py-4 rounded-full border-1 border-customWhite border"
+  const inactiveClass = "px-4 py-2 md:px-8 md:py-4"
 
   const isProjectActive = (project: DigitalArtProject): boolean => {
     return activeProject === project
@@ -59,8 +59,8 @@ const DigitalArt = (): JSX.Element => {
 
   return (
     <div className="bg-accent-purple-dark w-full h-screen rounded-xl flex flex-col p-8 text-customWhite">
-      <p className="text-md font-light">Digital Art</p>
-      <div className="bg-accent-purple-dark text-base font-light rounded-full flex flex-row border-1 border-customWhite border w-fit my-4">
+      <p className="text-base md:text-md font-light">Digital Art</p>
+      <div className="bg-accent-purple-dark text-sm md:text-base font-light rounded-full flex flex-row border-1 border-customWhite border w-fit my-4">
         {projectOptionButton(
           "drawInverted",
           handleOnClickProject("drawInverted"),
