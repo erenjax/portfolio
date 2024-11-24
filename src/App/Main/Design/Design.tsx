@@ -1,11 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 
 const Design = (): JSX.Element => {
   const navigate = useNavigate()
+  const location = useLocation()
+  console.log(location.pathname)
 
   const [isProjectOpen, setIsProjectOpen] = useState(false)
+
+  useEffect(() => {
+    if (location.pathname === "/design") {
+      setIsProjectOpen(false)
+    } else {
+      setIsProjectOpen(true)
+    }
+  }, [location.pathname])
 
   const handleOnClickPhotography = (): void => {
     setIsProjectOpen(true)
@@ -22,6 +32,7 @@ const Design = (): JSX.Element => {
 
   const handleOnClickTitle = (): void => {
     setIsProjectOpen(false)
+    navigate("/design")
   }
 
   return (
