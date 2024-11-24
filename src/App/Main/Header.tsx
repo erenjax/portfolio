@@ -35,7 +35,10 @@ const Header = (): JSX.Element => {
   return (
     <div className="flex flex-row w-screen top-0 bg-customBlack justify-between px-4 md:px-16 lg:px-24 py-8 items-center text-customWhite">
       <button className="w-fit h-fit" onClick={handleOnClickHome}>
-        <p className={cn("text-base md:text-2xl", hoverStyle)}>
+        <div className="w-12 h-12 ml-4 rounded-full bg-customWhite visible sm:hidden text-accent-purple-light text-center flex justify-center font-semibold text-md">
+          E
+        </div>
+        <p className={cn("text-base sm:text-2xl hidden sm:inline", hoverStyle)}>
           Emily Ren Jackson
         </p>
       </button>

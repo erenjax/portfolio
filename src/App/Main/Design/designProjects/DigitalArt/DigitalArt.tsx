@@ -60,7 +60,7 @@ const DigitalArt = (): JSX.Element => {
   return (
     <div className="bg-accent-purple-dark w-full h-screen rounded-xl flex flex-col p-8 text-customWhite">
       <p className="text-base md:text-md font-light">Digital Art</p>
-      <div className="bg-accent-purple-dark text-sm md:text-base font-light rounded-full flex flex-row border-1 border-customWhite border w-fit my-4">
+      <div className="bg-accent-purple-dark text-xs md:text-base font-light rounded-full flex flex-row border-1 border-customWhite border w-fit my-4">
         {projectOptionButton(
           "drawInverted",
           handleOnClickProject("drawInverted"),

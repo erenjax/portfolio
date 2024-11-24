@@ -4,7 +4,7 @@ const About = (): JSX.Element => {
   return (
     <div className="flex flex-col w-screen bg-customBlack min-h-screen px-6 md:px-16 xl:px-[174px]">
       <div className="flex w-full justify-start">
-        <p className="text-lg text-customWhite">About</p>
+        <p className="text-md sm:text-lg text-customWhite">About</p>
       </div>
 
       <div className="flex flex-col md:flex-row space-y-8 sm:space-x-16 md:space-y-0 py-8">
