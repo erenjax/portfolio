@@ -4,13 +4,13 @@ const WorkExperience = (): JSX.Element => {
   }
 
   return (
-    <div className="bg-accent-purple-dark w-[675px] h-[709px] rounded-xl flex flex-col p-8">
+    <div className="bg-accent-purple-dark sm:w-[675px] sm:h-[709px] rounded-md sm:rounded-xl flex flex-col p-4 sm:p-8 mt-8 sm:mt-0">
       <p className="text-base w-fit h-fit pb-4">Work Experience</p>
       <table>
         <tbody className="text-sm">
           <tr>
-            <td className="pr-6 py-3">
-              <div className="p-4 border-2 border-customWhite rounded-full flex justify-center">
+            <td className="pr-3 sm:pr-6 py-3">
+              <div className="px-3 py-2 sm:p-4 border sm:border-2 border-customWhite rounded-md sm:rounded-full flex justify-center">
                 Sept 2023 - Present
               </div>
             </td>
@@ -20,8 +20,8 @@ const WorkExperience = (): JSX.Element => {
             </td>
           </tr>
           <tr>
-            <td className="pr-6 py-3">
-              <div className="p-4 border-2 border-customWhite rounded-full flex justify-center">
+            <td className="pr-3 sm:pr-6 py-3">
+              <div className="px-3 py-2 sm:p-4 border sm:border-2 border-customWhite rounded-md sm:rounded-full flex justify-center">
                 2020 - 2023
               </div>
             </td>
@@ -33,8 +33,8 @@ const WorkExperience = (): JSX.Element => {
             </td>
           </tr>
           <tr>
-            <td className="pr-6 py-3">
-              <div className="p-4 border-2 border-customWhite rounded-full flex justify-center">
+            <td className="pr-3 sm:pr-6 py-3">
+              <div className="px-3 py-2 sm:p-4 border sm:border-2 border-customWhite rounded-md sm:rounded-full flex justify-center">
                 Summer 2022
               </div>
             </td>
@@ -44,8 +44,8 @@ const WorkExperience = (): JSX.Element => {
             </td>
           </tr>
           <tr>
-            <td className="pr-6 py-3">
-              <div className="p-4 border-2 border-customWhite rounded-full flex justify-center text-xs">
+            <td className="pr-3 sm:pr-6 py-3">
+              <div className="px-3 py-2 sm:py-4 sm:px-2 border sm:border-2 border-customWhite rounded-md sm:rounded-full flex justify-center">
                 Sept 2021 - Dec 2021
               </div>
             </td>
@@ -59,8 +59,8 @@ const WorkExperience = (): JSX.Element => {
             </td>
           </tr>
           <tr>
-            <td className="pr-6 py-3">
-              <div className="p-4 border-2 border-customWhite rounded-full flex justify-center">
+            <td className="pr-3 sm:pr-6 py-3">
+              <div className="px-3 py-2 sm:p-4 border sm:border-2 border-customWhite rounded-md sm:rounded-full flex justify-center">
                 Summer 2020
               </div>
             </td>

@@ -36,5 +36,5 @@
 /* Container */ 
 
   .quarter-section {
-    @apply bg-accent-purple-dark w-[675px] h-[339px] rounded-xl flex flex-col p-8 justify-end
+    @apply bg-accent-purple-dark h-1/2 md:w-[675px] md:h-[339px] rounded-md md:rounded-xl flex flex-col p-8 justify-end
   }

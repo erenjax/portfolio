@@ -44,8 +44,8 @@ const Design = (): JSX.Element => {
         <p className="text-md md:text-lg text-customWhite">Design Projects</p>
       </button>
       {!isProjectOpen && (
-        <div className="flex flex-row text-customWhite text-base py-4">
-          <div className="flex flex-col w-1/2 space-y-[32px]">
+        <div className="flex flex-col text-customWhite text-sm md:text-base space-y-8 p-4">
+          <div className="flex flex-col md:flex-row h-1/2 space-y-8 md:space-x-8 md:space-y-0">
             <button
               className="group/graphic quarter-section"
               onClick={handleOnClickGraphicDesign}
@@ -55,21 +55,21 @@ const Design = (): JSX.Element => {
               </p>
             </button>
             <button
-              className="group/photography quarter-section"
-              onClick={handleOnClickPhotography}
-            >
-              <p className="group-hover/photography:-translate-y-10 group-hover/graphic:ease-in duration-300">
-                Photography
-              </p>
-            </button>
-          </div>
-          <div className="flex flex-col w-1/2 space-y-[32px]">
-            <button
               className="group/digital quarter-section"
               onClick={handleOnClickDigitalArt}
             >
               <p className="group-hover/digital:-translate-y-10 group-hover/graphic:ease-in duration-300">
                 Digital Art
+              </p>
+            </button>
+          </div>
+          <div className="flex flex-col sm:flex-row w-full h-1/2">
+            <button
+              className="group/photography quarter-section"
+              onClick={handleOnClickPhotography}
+            >
+              <p className="group-hover/photography:-translate-y-10 group-hover/graphic:ease-in duration-300">
+                Photography
               </p>
             </button>
           </div>

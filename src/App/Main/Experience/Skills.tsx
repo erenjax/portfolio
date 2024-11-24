@@ -14,20 +14,52 @@ const Skills = (): JSX.Element => {
       <div className="flex flex-col">
         <div className="flex flex-col">
           <p className="">Technical</p>
-          <div className="flex flex-row space-x-6 pb-4 pt-2">
-            <img src={reactLogoSrc} alt="React" />
-            <img src={typescriptLogoSrc} alt="Typescript" />
-            <img src={tailwindLogoSrc} alt="Tailwind" />
-            <img src={pythonLogoSrc} alt="Python" />
-            <img src={rxjsLogoSrc} alt="RxJS" />
+          <div className="flex flex-row sm:space-x-6 pb-4 pt-2 flex-wrap">
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={reactLogoSrc}
+              alt="React"
+            />
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={typescriptLogoSrc}
+              alt="Typescript"
+            />
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={tailwindLogoSrc}
+              alt="Tailwind"
+            />
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={pythonLogoSrc}
+              alt="Python"
+            />
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={rxjsLogoSrc}
+              alt="RxJS"
+            />
           </div>
         </div>
         <div className="flex flex-col">
           <p>Design</p>
-          <div className="flex flex-row space-x-6 pb-4 pt-2">
-            <img src={figmaLogoSrc} alt="Figma" />
-            <img src={illustratorLogoSrc} alt="Figma" />
-            <img src={photoshopLogoSrc} alt="Figma" />
+          <div className="flex flex-row sm:space-x-6 pb-4 pt-2">
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={figmaLogoSrc}
+              alt="Figma"
+            />
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={illustratorLogoSrc}
+              alt="Figma"
+            />
+            <img
+              className="px-2 py-2 sm:px-0 sm:py-0"
+              src={photoshopLogoSrc}
+              alt="Figma"
+            />
           </div>
         </div>
       </div>
