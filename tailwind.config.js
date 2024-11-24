@@ -9,6 +9,7 @@ module.exports = {
       sm: ['16px', '24px'],
       base: ['24px', '40px'],
       md: ['32px', '48px'],
+      md1: ['48px', '64px'],
       lg: ['64px', '72px']
     },
     extend: {
