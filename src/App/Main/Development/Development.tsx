@@ -1,11 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 
 const Development = (): JSX.Element => {
   const navigate = useNavigate()
+  const location = useLocation()
 
   const [isProjectOpen, setIsProjectOpen] = useState(false)
+
+  useEffect(() => {
+    if (location.pathname === "/development") {
+      setIsProjectOpen(false)
+    } else {
+      setIsProjectOpen(true)
+    }
+  }, [location.pathname])
 
   const handleOnClickEvolv = (): void => {
     setIsProjectOpen(true)
