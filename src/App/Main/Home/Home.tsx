@@ -11,6 +11,14 @@ const Home = (): JSX.Element => {
     navigate("about")
   }
 
+  const handleOnClickDesign = (): void => {
+    navigate("design")
+  }
+
+  const handleOnClickDevelopment = (): void => {
+    navigate("development")
+  }
+
   const projectsAnimation =
     "group-hover/projects:translate-y-0  duration-2000 transition-all ease-in-out"
   const subProjectTextClass =
@@ -52,24 +60,28 @@ const Home = (): JSX.Element => {
             >
               projects
             </p>
-            <p
-              className={cn(
-                "text-sm md:text-base lg:text-md",
-                subProjectTextClass,
-                projectsAnimation,
-              )}
-            >
-              professional & semi professional
-            </p>
-            <p
-              className={cn(
-                "text-sm md:text-base lg:text-md",
-                subProjectTextClass,
-                projectsAnimation,
-              )}
-            >
-              graphic design & digital art
-            </p>
+            <button onClick={handleOnClickDevelopment}>
+              <p
+                className={cn(
+                  "text-sm md:text-base lg:text-md",
+                  subProjectTextClass,
+                  projectsAnimation,
+                )}
+              >
+                frontend development
+              </p>
+            </button>
+            <button onClick={handleOnClickDesign}>
+              <p
+                className={cn(
+                  "text-sm md:text-base lg:text-md",
+                  subProjectTextClass,
+                  projectsAnimation,
+                )}
+              >
+                design
+              </p>
+            </button>
           </button>
         </div>
       </div>
