@@ -5,7 +5,6 @@ import { Outlet, useLocation } from "react-router-dom"
 const Design = (): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(location.pathname)
 
   const [isProjectOpen, setIsProjectOpen] = useState(false)
 

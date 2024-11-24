@@ -12,7 +12,7 @@ const Evolv = (): JSX.Element => {
             <p className="text-sm sm:text-md font-light italic pl-4">
               Digital Product Developer
             </p>
-            <div className="text-base text-wrap pl-8">
+            <div className="text-xs sm:text-base text-wrap pl-8">
               <ul>
                 <li className="list-disc">
                   Designed and implemented new features for a user facing React
@@ -46,7 +46,7 @@ const Evolv = (): JSX.Element => {
           ></img>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row p-4 justify-between">
+      <div className="flex flex-col-reverse sm:flex-row p-4 justify-between">
         <div className="flex flex-row justify-center pt-8 sm:pt-0 w-fit">
           <img
             src="/Development/system_with_tablets.png"
@@ -54,7 +54,7 @@ const Evolv = (): JSX.Element => {
             alt="nordle mobile"
           ></img>
         </div>
-        <div className="flex flex-row items-center justify-center w-fit sm:w-1/2">
+        <div className="flex flex-row items-center justify-center w-full sm:w-1/2">
           <button
             className="px-4 py-4 sm:px-16 sm:py-4 bg-accent-purple-light rounded-full border-4 border-accent-purple-light hover:bg-customWhite hover:text-accent-purple-light hover:ease-in duration-300 h-fit"
             onClick={handleOnClickEvolv}
