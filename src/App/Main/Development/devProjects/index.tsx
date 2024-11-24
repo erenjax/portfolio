@@ -1,5 +1,4 @@
 import Nordle from "./Nordle"
+import Evolv from "./Evolv"
 
-export {
-  Nordle
-}
+export { Evolv, Nordle }

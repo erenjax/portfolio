@@ -8,7 +8,7 @@ import About from "./About"
 import Home from "./Home"
 
 import { GraphicDesign, Photography, DigitalArt } from "./Design/designProjects"
-import { Nordle } from "./Development/devProjects"
+import { Nordle, Evolv } from "./Development/devProjects"
 
 const Main = (): JSX.Element => {
   const location = useLocation()
@@ -20,6 +20,7 @@ const Main = (): JSX.Element => {
         <Route path="/" element={<Home />} />
         <Route path="development" element={<Development />}>
           <Route path="nordle" element={<Nordle />} />
+          <Route path="evolv" element={<Evolv />} />
         </Route>
         <Route path="design" element={<Design />}>
           <Route path="graphicDesign" element={<GraphicDesign />} />
