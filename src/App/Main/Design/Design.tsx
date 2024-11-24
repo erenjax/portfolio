@@ -63,14 +63,14 @@ const Design = (): JSX.Element => {
             </button>
           </div>
           <div className="flex flex-col sm:flex-row w-full h-1/2">
-            <button
-              className="group/photography quarter-section"
-              onClick={handleOnClickPhotography}
-            >
-              <p className="group-hover/photography:-translate-y-10 group-hover/graphic:ease-in duration-300">
-                Photography
-              </p>
-            </button>
+            {/* <button */}
+            {/*   className="group/photography quarter-section" */}
+            {/*   onClick={handleOnClickPhotography} */}
+            {/* > */}
+            {/*   <p className="group-hover/photography:-translate-y-10 group-hover/graphic:ease-in duration-300"> */}
+            {/*     Photography */}
+            {/*   </p> */}
+            {/* </button> */}
           </div>
         </div>
       )}
