@@ -9,7 +9,7 @@ const Skills = (): JSX.Element => {
   const figmaLogoSrc = "/SoftwareSkillsLogos/FigmaLogo.png"
 
   return (
-    <div className="bg-accent-purple-dark w-[675px] h-[339px] rounded-xl flex p-8 flex-col">
+    <div className="quarter-section">
       <p className="text-base pb-4">Software Skills</p>
       <div className="flex flex-col">
         <div className="flex flex-col">

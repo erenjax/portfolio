@@ -1,6 +1,6 @@
 const Education = (): JSX.Element => {
   return (
-    <div className="bg-accent-purple-dark w-[675px] h-[339px] rounded-xl flex flex-col p-8">
+    <div className="quarter-section">
       <p className="text-base w-fit h-fit">Education</p>
       <table>
         <tbody className="text-sm">
