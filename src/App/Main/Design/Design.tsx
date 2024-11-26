@@ -16,18 +16,6 @@ const Design = (): JSX.Element => {
     }
   }, [location.pathname])
 
-  {
-    /* const handleOnClickPhotography = (): void => { */
-  }
-  {
-    /*   setIsProjectOpen(true) */
-  }
-  {
-    /*   navigate("photography") */
-  }
-  {
-    /* } */
-  }
   const handleOnClickGraphicDesign = (): void => {
     setIsProjectOpen(true)
     navigate("graphicDesign")
@@ -70,16 +58,7 @@ const Design = (): JSX.Element => {
               </p>
             </button>
           </div>
-          <div className="flex flex-col sm:flex-row w-full h-1/2">
-            {/* <button */}
-            {/*   className="group/photography quarter-section" */}
-            {/*   onClick={handleOnClickPhotography} */}
-            {/* > */}
-            {/*   <p className="group-hover/photography:-translate-y-10 group-hover/graphic:ease-in duration-300"> */}
-            {/*     Photography */}
-            {/*   </p> */}
-            {/* </button> */}
-          </div>
+          <div className="flex flex-col sm:flex-row w-full h-1/2"></div>
         </div>
       )}
 
