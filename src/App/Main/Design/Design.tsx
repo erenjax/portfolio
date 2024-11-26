@@ -16,9 +16,17 @@ const Design = (): JSX.Element => {
     }
   }, [location.pathname])
 
-  const handleOnClickPhotography = (): void => {
-    setIsProjectOpen(true)
-    navigate("photography")
+  {
+    /* const handleOnClickPhotography = (): void => { */
+  }
+  {
+    /*   setIsProjectOpen(true) */
+  }
+  {
+    /*   navigate("photography") */
+  }
+  {
+    /* } */
   }
   const handleOnClickGraphicDesign = (): void => {
     setIsProjectOpen(true)
