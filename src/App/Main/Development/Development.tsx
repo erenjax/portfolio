@@ -39,7 +39,7 @@ const Development = (): JSX.Element => {
         </p>
       </button>
       {!isProjectOpen && (
-        <div className="flex flex-col sm:flex-row text-customWhite text-sm md:text-base space-y-8 sm:space-y-0  sm:space-x-8 p-4">
+        <div className="flex flex-col text-customWhite text-sm md:text-base space-y-8 p-4">
           <div className="flex flex-col md:flex-row h-1/2 space-y-8 md:space-x-8 md:space-y-0">
             <button
               className="group/graphic quarter-section"
@@ -49,8 +49,6 @@ const Development = (): JSX.Element => {
                 Evolv Work
               </p>
             </button>
-          </div>
-          <div className="flex flex-col md:flex-row h-1/2 space-y-8 md:space-x-8 md:space-y-0">
             <button
               className="group/digital quarter-section"
               onClick={handleOnClickNordle}

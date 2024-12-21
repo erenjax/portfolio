@@ -54,7 +54,7 @@ const Home = (): JSX.Element => {
           >
             <p
               className={cn(
-                "translate-y-[130%] lg:translate-y-[200%]",
+                "translate-y-[130%] lg:translate-y-[200%] group-hover/projects:opacity-0 xl:group-hover/projects:opacity-100",
                 projectsAnimation,
               )}
             >
@@ -63,7 +63,7 @@ const Home = (): JSX.Element => {
             <button onClick={handleOnClickDevelopment}>
               <p
                 className={cn(
-                  "text-sm md:text-base lg:text-md",
+                  "text-sm md:text-sm lg:text-base",
                   subProjectTextClass,
                   projectsAnimation,
                 )}
@@ -74,7 +74,7 @@ const Home = (): JSX.Element => {
             <button onClick={handleOnClickDesign}>
               <p
                 className={cn(
-                  "text-sm md:text-base lg:text-md",
+                  "text-sm md:text-sm lg:text-base",
                   subProjectTextClass,
                   projectsAnimation,
                 )}

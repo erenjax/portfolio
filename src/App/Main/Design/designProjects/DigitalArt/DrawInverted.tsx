@@ -13,7 +13,7 @@ const DrawInverted = (): JSX.Element => {
           </p>
         </div>
         <button
-          className="px-4 sm:px-16 py-4 bg-accent-purple-light rounded-full border-4 border-accent-purple-light hover:bg-customWhite hover:text-accent-purple-light hover:ease-in duration-300"
+          className="py-4 bg-accent-purple-light rounded-full border-4 border-accent-purple-light hover:bg-customWhite hover:text-accent-purple-light hover:ease-in duration-300"
           onClick={handleOnClickSourceCode}
         >
           <p className="text-sm sm:text-md">Source Code</p>
