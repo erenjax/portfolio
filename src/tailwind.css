@@ -13,7 +13,7 @@
   }
 
   .accent-purple-light-button-animation {
-    @apply  flex flex-col justify-end h-1/2 w-full bg-accent-purple-light rounded-xl p-8 hover:ease-in duration-300 hover:bg-customBlack border-4 border-accent-purple-light
+    @apply  flex flex-col justify-end h-1/2 w-full items-start bg-accent-purple-light rounded-xl p-8 hover:ease-in duration-300 hover:bg-customBlack border-4 border-accent-purple-light
   }
 
   .sm-accent-purple-dark-button-animation {
