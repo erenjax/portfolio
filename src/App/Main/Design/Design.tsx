@@ -45,7 +45,7 @@ const Design = (): JSX.Element => {
               className="group/graphic quarter-section"
               onClick={handleOnClickGraphicDesign}
             >
-              <p className="group-hover/graphic:-translate-y-10 group-hover/graphic:ease-in duration-300">
+              <p className="group-hover/graphic:-translate-y-10 group-hover/graphic:ease-in duration-300 flex w-full justify-start">
                 Graphic Design
               </p>
             </button>
@@ -53,7 +53,7 @@ const Design = (): JSX.Element => {
               className="group/digital quarter-section"
               onClick={handleOnClickDigitalArt}
             >
-              <p className="group-hover/digital:-translate-y-10 group-hover/graphic:ease-in duration-300">
+              <p className="group-hover/digital:-translate-y-10 group-hover/graphic:ease-in duration-300 flex w-full justify-start">
                 Digital Art
               </p>
             </button>
