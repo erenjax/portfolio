@@ -1,21 +1,61 @@
+import { useEffect, useRef } from "react"
 import Education from "./Education"
 import WorkExperience from "./WorkExperience"
 import Skills from "./Skills"
+import "./Experience.css"
 
 const Experience = (): JSX.Element => {
+  const page = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const element = page.current
+    if (
+      !element ||
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("experience-panel-visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0, rootMargin: "0px 0px -48px 0px" },
+    )
+
+    const panels = element.querySelectorAll(".experience-panel")
+    element.classList.add("experience-reveals-active")
+    panels.forEach(panel => observer.observe(panel))
+
+    return () => {
+      observer.disconnect()
+      element.classList.remove("experience-reveals-active")
+      panels.forEach(panel =>
+        panel.classList.remove("experience-panel-visible"),
+      )
+    }
+  }, [])
+
   return (
-    <div className="flex flex-col w-screen bg-customBlack min-h-screen px-6 md:px-16 xl:px-[174px]">
-      <div className="flex w-full justify-start py-4">
-        <p className="text-md lg:text-lg text-customWhite">Experience</p>
-      </div>
-      <div className="flex flex-col xl:flex-row text-customWhite py-4 space-y-[32px] xl:space-y-0 xl:space-x-8">
+    <main
+      ref={page}
+      className="experience-page"
+      aria-labelledby="experience-title"
+    >
+      <h1 id="experience-title" className="experience-title">
+        Experience
+      </h1>
+      <div className="experience-content">
         <WorkExperience />
-        <div className="flex flex-col lg:w-1/2 space-y-[32px]">
-          <Education />
-          <Skills />
-        </div>
+        <Education />
+        <Skills />
       </div>
-    </div>
+    </main>
   )
 }
 

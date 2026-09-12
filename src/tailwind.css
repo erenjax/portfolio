@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html, body, #root {
+    background-color: #0D0217;
+  }
+}
+
 @layer components {
 
 /* Home Page Components */
@@ -17,11 +23,11 @@
   }
 
   .sm-accent-purple-dark-button-animation {
-    @apply flex w-1/2 h-full bg-accent-purple-dark rounded-lg p-4 border-4 border-accent-purple-dark duration-300
+    @apply flex w-1/2 h-full bg-customBlack rounded-lg p-4 border-4 border-accent-purple-dark duration-300
   }
 
   .accent-purple-dark-button-animation {
-    @apply flex w-1/2 h-full bg-accent-purple-dark rounded-xl p-8 hover:bg-customBlack border-4 border-accent-purple-dark hover:ease-in duration-300
+    @apply flex w-1/2 h-full bg-customBlack rounded-xl p-8 hover:bg-customBlack border-4 border-accent-purple-dark hover:ease-in duration-300
   }
 
   .sm-customWhite-button-animation {
@@ -36,5 +42,5 @@
 /* Container */ 
 
   .quarter-section {
-    @apply bg-accent-purple-dark h-1/2 md:w-[675px] md:h-[339px] rounded-md md:rounded-xl flex flex-col p-8 justify-end
+    @apply bg-customBlack h-1/2 md:w-[675px] md:h-[339px] rounded-md md:rounded-xl flex flex-col p-8 justify-end
   }

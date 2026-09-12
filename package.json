@@ -1,5 +1,4 @@
 {
-  "homepage": "/",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -14,27 +13,17 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.1",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "tsc:watch": "tsc --watch",
     "tsc": "tsc",
     "prettier": "prettier -l '**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
-    "lint": "eslint ./",
-    "lint:fix": "eslint ./ --fix",
-    "prep": "npm run format && npm run lint:fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
   },
   "browserslist": {
     "production": [
@@ -53,6 +42,8 @@
     "postcss": "^8.4.49",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.15",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.3.5"
   }
 }

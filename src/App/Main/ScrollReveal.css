@@ -1,0 +1,16 @@
+.scroll-reveal-active {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 650ms ease-out, transform 650ms ease-out;
+}
+.scroll-reveal-active.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-active {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

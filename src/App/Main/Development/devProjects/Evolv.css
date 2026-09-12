@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Inter:wght@400&family=Montserrat:wght@400;500;600;700&family=Work+Sans:wght@400;500&display=swap");
+.evolv-page {
+  --evolv-dark: #0D0217;
+  --evolv-light: #c5c2fa;
+  background: #0D0217;
+  color: var(--evolv-light);
+  font-family: Montserrat, sans-serif;
+}
+.evolv-content {
+  max-width: 1440px;
+  margin: auto;
+  padding: 77px 72px 0;
+}
+.evolv-hero h1 {
+  font-size: clamp(48px, 6.67vw, 96px);
+  line-height: 1.22;
+  font-weight: 500;
+}
+.evolv-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 32px;
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.22;
+}
+.evolv-tablet {
+  width: 100%;
+  aspect-ratio: 631 / 442;
+  object-fit: cover;
+  border: 5px solid #0D0217;
+  border-radius: 15px 15px 5px 5px;
+  box-shadow: 0 0 6px #d2c6ff;
+}
+.evolv-hero-tablet {
+  display: block;
+  width: min(100%, 842px);
+  margin: 42px auto 0;
+  border-width: 6px;
+  border-radius: 18px 18px 6px 6px;
+}
+.evolv-description {
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  line-height: 1.75;
+  margin-top: 42px;
+  min-height: 210px;
+}
+.evolv-screens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  margin-top: 159px;
+  padding-bottom: 263px;
+}
+.evolv-gallery {
+  background: var(--evolv-dark);
+  min-height: 698px;
+  padding: 37px 0 74px;
+}
+.evolv-gallery h2 {
+  max-width: 1300px;
+  font-size: clamp(36px, 4.45vw, 64px);
+  font-weight: 400;
+  line-height: 1.22;
+  margin: 0 auto 53px;
+}
+.evolv-gallery-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 89px;
+  margin-inline: max(70px, calc((100vw - 1300px) / 2));
+  padding: 4px 4px 32px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--evolv-light) #0d0217;
+}
+.evolv-gallery-track::-webkit-scrollbar {
+  height: 10px;
+}
+.evolv-gallery-track::-webkit-scrollbar-track {
+  background: #0d0217;
+  border-radius: 100px;
+}
+.evolv-gallery-track::-webkit-scrollbar-thumb {
+  background: var(--evolv-light);
+  border: 2px solid #0d0217;
+  border-radius: 100px;
+}
+.evolv-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 364px;
+  height: 482px;
+  border: 4px solid var(--evolv-light);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #0D0217;
+  text-align: left;
+  scroll-snap-align: center;
+}
+.evolv-card-preview {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #0D0217;
+}
+.evolv-card-crop {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.evolv-card-crop > img {
+  position: absolute;
+  max-width: none;
+  height: auto;
+}
+.evolv-card-caption {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  height: 121px;
+  padding: 16px;
+  background: #0d0217;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+}
+.evolv-card-caption > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.evolv-card-caption > span:first-child {
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 6px;
+}
+.evolv-card-caption > span:last-child {
+  margin-top: 6px;
+}
+.evolv-card:hover {
+  box-shadow: 0 0 0 3px var(--evolv-light);
+}
+.evolv-page a:focus-visible,
+.evolv-page button:focus-visible {
+  outline: 3px solid #c5c2fa;
+  outline-offset: 5px;
+}
+.evolv-dialog {
+  width: min(1355px, calc(100% - 48px));
+  max-height: calc(100dvh - 48px);
+  padding: 38px 52px 22px;
+  border: 0;
+  border-radius: 32px;
+  background: white;
+  color: black;
+  font-family: "Work Sans", sans-serif;
+}
+.evolv-dialog::backdrop {
+  background: rgb(0 0 0 / 80%);
+  backdrop-filter: blur(6px);
+}
+body:has(.evolv-dialog[open]) {
+  overflow: hidden;
+}
+.evolv-close {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  font-size: 36px;
+  line-height: 1;
+}
+.evolv-slide-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.evolv-slide {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.evolv-detail-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 24px;
+}
+.evolv-detail-navigation button {
+  font-size: 48px;
+}
+.evolv-dialog button:focus-visible {
+  outline-color: #381c3b;
+}
+@media (max-width: 1440px) {
+  .evolv-gallery h2 {
+    margin-inline: 70px;
+  }
+}
+@media (max-width: 700px) {
+  .evolv-content {
+    padding: 40px 20px 0;
+  }
+  .evolv-hero h1 {
+    font-size: 40px;
+  }
+  .evolv-metadata {
+    font-size: 20px;
+    margin-top: 24px;
+    gap: 12px 24px;
+  }
+  .evolv-description {
+    font-size: 18px;
+    min-height: 0;
+  }
+  .evolv-screens {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 64px;
+    padding-bottom: 64px;
+  }
+  .evolv-gallery {
+    min-height: 0;
+  }
+  .evolv-gallery h2 {
+    font-size: 36px;
+    margin: 0 20px 28px;
+  }
+  .evolv-gallery-track {
+    margin-inline: 20px;
+    gap: 24px;
+  }
+  .evolv-card {
+    flex-basis: 280px;
+    height: 380px;
+  }
+  .evolv-card-caption {
+    font-size: 16px;
+  }
+  .evolv-card-caption > span:first-child {
+    font-size: 20px;
+  }
+  .evolv-dialog {
+    padding: 48px 24px 24px;
+    width: calc(100% - 24px);
+  }
+}
+.evolv-detail-navigation img {
+  width: 64px;
+  height: 64px;
+}
+.evolv-arrow-previous {
+  transform: rotate(-90deg);
+}
+.evolv-arrow-next {
+  transform: rotate(90deg);
+}

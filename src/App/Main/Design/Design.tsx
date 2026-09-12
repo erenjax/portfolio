@@ -20,10 +20,6 @@ const Design = (): JSX.Element => {
     setIsProjectOpen(true)
     navigate("graphicDesign")
   }
-  const handleOnClickDigitalArt = (): void => {
-    setIsProjectOpen(true)
-    navigate("digitalArt")
-  }
 
   const handleOnClickTitle = (): void => {
     setIsProjectOpen(false)
@@ -47,14 +43,6 @@ const Design = (): JSX.Element => {
             >
               <p className="group-hover/graphic:-translate-y-10 group-hover/graphic:ease-in duration-300 flex w-full justify-start">
                 Graphic Design
-              </p>
-            </button>
-            <button
-              className="group/digital quarter-section"
-              onClick={handleOnClickDigitalArt}
-            >
-              <p className="group-hover/digital:-translate-y-10 group-hover/graphic:ease-in duration-300 flex w-full justify-start">
-                Digital Art
               </p>
             </button>
           </div>

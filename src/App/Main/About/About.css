@@ -1,0 +1,39 @@
+.about-page {
+  background: #0d0217;
+  font-family: Montserrat, sans-serif;
+  padding: 64px 24px 128px;
+}
+.about-title {
+  width: min(100%, 1296px);
+  margin: 0 auto 96px;
+  color: #c5c2fa;
+  font-size: clamp(48px, 6.67vw, 96px);
+  font-weight: 500;
+  line-height: 1.22;
+}
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  max-width: 1092px;
+  margin-inline: auto;
+}
+.about-config-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+@media (max-width: 700px) {
+  .about-page {
+    padding: 40px 20px 64px;
+  }
+  .about-title {
+    font-size: 48px;
+    margin-bottom: 64px;
+  }
+  .about-content {
+    gap: 32px;
+  }
+}
