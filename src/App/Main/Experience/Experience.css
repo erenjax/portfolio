@@ -1,0 +1,185 @@
+.experience-page {
+  background: #0d0217;
+  font-family: Montserrat, sans-serif;
+  padding: 64px 24px 128px;
+}
+.experience-title {
+  width: min(100%, 1296px);
+  margin: 0 auto 96px;
+  color: #c5c2fa;
+  font-size: clamp(48px, 6.67vw, 96px);
+  font-weight: 500;
+  line-height: 1.22;
+}
+.experience-content {
+  width: min(100%, 902px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+.experience-panel {
+  background: #c5c2fa;
+  color: #0d0217;
+  border-radius: 32px;
+  padding: 32px 36px 44px;
+}
+.experience-panel > h2 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 40px;
+}
+.experience-work {
+  min-height: 486px;
+  padding: 24px 24px 44px;
+}
+.experience-rows {
+  display: grid;
+  gap: 30px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.experience-row {
+  display: grid;
+  grid-template-columns: 278px minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+.experience-date {
+  justify-self: end;
+  border: 1px solid #0d0217;
+  border-radius: 100px;
+  padding: 20px 18px;
+  text-align: center;
+  white-space: nowrap;
+}
+.experience-organization {
+  font-weight: 600;
+  font-size: inherit;
+  line-height: inherit;
+}
+.experience-organization:hover {
+  text-decoration: underline;
+}
+.experience-panel a:focus-visible {
+  outline: 3px solid #0d0217;
+  outline-offset: 4px;
+}
+.experience-education {
+  min-height: 440px;
+}
+.experience-education > h2 {
+  margin-bottom: 30px;
+}
+.experience-education .experience-row {
+  grid-template-columns: 184px minmax(0, 1fr);
+}
+.experience-education .experience-rows {
+  gap: 32px;
+}
+.experience-skills {
+  min-height: 386px;
+  padding: 36px 50px;
+}
+.experience-skills > h2 {
+  margin-bottom: 28px;
+}
+.experience-skill-group + .experience-skill-group {
+  margin-top: 30px;
+}
+.experience-skill-group h3 {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.experience-skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.experience-skill-icons img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+.experience-react-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: #23272f;
+}
+.experience-react-icon img {
+  width: 56px;
+  height: 56px;
+}
+.experience-reveals-active .experience-panel {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 650ms ease-out,
+    transform 650ms ease-out;
+}
+.experience-reveals-active .experience-panel-visible,
+.experience-reveals-active .experience-panel:focus-within {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .experience-reveals-active .experience-panel {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+@media (max-width: 700px) {
+  .experience-page {
+    padding: 40px 20px 64px;
+  }
+  .experience-title {
+    font-size: 48px;
+    margin-bottom: 64px;
+  }
+  .experience-content {
+    gap: 72px;
+  }
+  .experience-panel {
+    min-height: 0;
+    padding: 28px 24px;
+  }
+  .experience-panel > h2 {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+  .experience-rows {
+    font-size: 16px;
+  }
+  .experience-row,
+  .experience-education .experience-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .experience-date {
+    justify-self: start;
+    padding: 12px 16px;
+  }
+  .experience-skill-icons {
+    gap: 20px;
+  }
+  .experience-skill-icons img {
+    width: 56px;
+    height: 56px;
+  }
+  .experience-react-icon {
+    width: 56px;
+    height: 56px;
+  }
+  .experience-react-icon img {
+    width: 44px;
+    height: 44px;
+  }
+}

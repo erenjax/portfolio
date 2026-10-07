@@ -1,45 +1,45 @@
-const Education = (): JSX.Element => {
-  return (
-    <div className="quarter-section !justify-start">
-      <p className="text-base w-fit h-fit">Education</p>
-      <table>
-        <tbody className="text-xs sm:text-sm">
-          <tr>
-            <td className="pr-3 sm:pr-6 py-2 sm:py-3">
-              <div className="px-1 py-2 sm:p-4 border sm:border-2 border-customWhite rounded-full flex justify-center text-nowrap">
-                May 2023
-              </div>
-            </td>
-            <td className="py-3">
-              <div className="font-semibold">
-                Wesleyan University, Middletown CT
-              </div>
-              <div className="font-light">Bachelor of Arts</div>
-              <div className="font-light">(Major) Computer Science</div>
-              <div className="font-light">
-                (Minor) Graphic Design and College of East Asian Studies
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="pr-3 sm:pr-6 py-2 sm:py-3">
-              <div className="px-2 py-2 sm:p-4 border sm:border-2 border-customWhite rounded-full flex justify-center text-nowrap">
-                June 2019
-              </div>
-            </td>
-            <td className="py-3">
-              <div className="font-semibold">
-                Phillips Academy Andover, Andover MA
-              </div>
-              <div className="font-light">
-                Recipience of Phillips Academy Dance Award 2018-2019
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+const education = [
+  {
+    date: "August 2027",
+    school: "Carnegie Mellon University, Pittsburgh PA",
+    details: ["Masters in Human Computer Interaction"],
+  },
+  {
+    date: "May 2023",
+    school: "Wesleyan University, Middletown CT",
+    details: [
+      "Bachelor of Arts",
+      "(Major) Computer Science",
+      "(Minor) Graphic Design and College of East Asian Studies",
+    ],
+  },
+  {
+    date: "June 2019",
+    school: "Phillips Academy Andover, Andover MA",
+    details: ["Recipient of Phillips Academy Dance Award 2018–2019"],
+  },
+]
+
+const Education = (): JSX.Element => (
+  <section
+    className="experience-panel experience-education"
+    aria-labelledby="education-title"
+  >
+    <h2 id="education-title">Education</h2>
+    <div className="experience-rows">
+      {education.map(item => (
+        <div className="experience-row" key={item.date}>
+          <p className="experience-date">{item.date}</p>
+          <div>
+            <h3 className="experience-organization">{item.school}</h3>
+            {item.details.map(detail => (
+              <p key={detail}>{detail}</p>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
-  )
-}
+  </section>
+)
 
 export default Education

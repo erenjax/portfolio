@@ -1,0 +1,136 @@
+.tripjam-page {
+  background: #0d0217;
+  color: #c5c2fa;
+  font-family: Montserrat, sans-serif;
+}
+.tripjam-content {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 39px 72px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+.tripjam-heading h1 {
+  font-size: clamp(48px, 6.67vw, 96px);
+  font-weight: 500;
+  line-height: 1.22;
+}
+.tripjam-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 32px;
+  font-size: clamp(20px, 2.5vw, 36px);
+}
+.tripjam-board,
+.tripjam-demo {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+.tripjam-content h2 {
+  font-size: clamp(32px, 3.34vw, 48px);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 32px;
+}
+.tripjam-content section > p,
+.tripjam-feature p {
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  line-height: 1.75;
+}
+.tripjam-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+.tripjam-actions a {
+  display: grid;
+  place-items: center;
+  min-height: 94px;
+  min-width: 262px;
+  padding: 20px 32px;
+  border: 3px solid #c5c2fa;
+  border-radius: 100px;
+  background: #c5c2fa;
+  color: #0d0217;
+  font-size: 32px;
+  transition:
+    background-color 300ms,
+    color 300ms;
+}
+.tripjam-actions a:hover,
+.tripjam-actions a:focus-visible {
+  background: transparent;
+  color: #c5c2fa;
+}
+.tripjam-actions a:focus-visible {
+  outline: 3px solid #c5c2fa;
+  outline-offset: 5px;
+}
+.tripjam-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+.tripjam-feature {
+  border: 2px solid #c5c2fa;
+  border-radius: 32px;
+  padding: 32px;
+}
+.tripjam-step {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+.tripjam-feature h3 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.tripjam-feature p {
+  font-size: 20px;
+}
+.tripjam-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+  list-style: none;
+  padding: 0;
+}
+.tripjam-stack li {
+  border: 1px solid #c5c2fa;
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-size: 18px;
+}
+@media (max-width: 700px) {
+  .tripjam-content {
+    padding: 40px 20px 64px;
+    gap: 64px;
+  }
+  .tripjam-metadata {
+    margin-top: 24px;
+  }
+  .tripjam-board,
+  .tripjam-demo {
+    border-radius: 16px;
+  }
+  .tripjam-content section > p {
+    font-size: 18px;
+  }
+  .tripjam-features {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .tripjam-feature {
+    padding: 24px;
+  }
+  .tripjam-actions a {
+    min-height: 64px;
+    font-size: 24px;
+  }
+}

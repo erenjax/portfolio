@@ -20,12 +20,12 @@ module.exports = {
         "xl": "64px",
       },
       colors: {
-        customBlack: "#080708",
+        customBlack: "#0D0217",
         customWhite: "#F8EFEB",
         accent: {
           blue: "#3B60E4",
           purple: {
-            light: "#7765E3",
+            light: "#C5C2FA",
             dark: "#4C1945",
           }
         },
