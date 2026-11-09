@@ -3,7 +3,7 @@
   background: #292824;
   color: #fff;
   font-family: "Google Sans Code", monospace;
-  padding: 140px 3.68vw 100px;
+  padding: 164px 3.68vw 100px;
   position: relative;
 }
 .experience-title {
@@ -23,7 +23,7 @@
   position: absolute;
   left: 12.7%;
   transform: translateX(-50%);
-  top: -140px;
+  top: -164px;
   bottom: -100px;
   width: 1px;
   background: #b2b1ad;
@@ -98,11 +98,11 @@ a.experience-organization:hover {
 }
 @media (max-width: 700px) {
   .experience-page {
-    padding: 80px 24px;
+    padding: 96px 24px 80px;
   }
   .experience-content::before {
     left: 8px;
-    top: -80px;
+    top: -96px;
     bottom: -80px;
   }
   .experience-panel {

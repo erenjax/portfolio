@@ -16,64 +16,48 @@ const HomeTerminal = (): JSX.Element => {
 
   useEffect(() => {
     const element = command.current
-    const home = element?.closest<HTMLElement>(".home-section")
-    if (!element || !home) return
+    if (!element) return
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)")
     let timer: number | undefined
-    let frame = 0
-    let started = false
-    const showFullText = () => {
+    let visible = false
+    const stop = () => {
       window.clearInterval(timer)
-      setLetters(message.length)
-      started = true
+      timer = undefined
     }
     const start = () => {
-      started = true
+      stop()
+      if (motion.matches) {
+        setLetters(message.length)
+        return
+      }
+      setLetters(0)
       let count = 0
       timer = window.setInterval(() => {
         count += 1
         setLetters(count)
-        if (count === message.length) window.clearInterval(timer)
+        if (count === message.length) stop()
       }, 65)
     }
-    const checkReadiness = () => {
-      frame = 0
-      if (started) return
-      const bounds = element.getBoundingClientRect()
-      const homeBounds = home.getBoundingClientRect()
-      const headerBottom =
-        document.querySelector(".portfolio-header")?.getBoundingClientRect()
-          .bottom ?? 0
-      const fullyVisible =
-        bounds.top >= headerBottom + 24 &&
-        bounds.bottom <= window.innerHeight - 24
-      const grayFillsScreen = homeBounds.bottom >= window.innerHeight
-      if (
-        fullyVisible &&
-        grayFillsScreen &&
-        home.dataset.transitionComplete === "true"
-      )
-        start()
-    }
-    const update = () => {
-      if (!started && !frame) frame = requestAnimationFrame(checkReadiness)
-    }
+    const observer = new IntersectionObserver(([entry]) => {
+      const inView = entry.isIntersecting
+      if (inView && !visible) start()
+      else if (!inView) stop()
+      visible = inView
+    })
     const onMotionChange = () => {
-      if (motion.matches) showFullText()
-      else update()
+      if (motion.matches) {
+        stop()
+        setLetters(message.length)
+      } else if (visible) {
+        start()
+      }
     }
-    if (motion.matches) showFullText()
-    else update()
-    window.addEventListener("scroll", update, { passive: true })
-    window.addEventListener("resize", update)
-    home.addEventListener("home-transition-change", update)
+    if (motion.matches) setLetters(message.length)
+    observer.observe(element)
     motion.addEventListener("change", onMotionChange)
     return () => {
-      window.clearInterval(timer)
-      cancelAnimationFrame(frame)
-      window.removeEventListener("scroll", update)
-      window.removeEventListener("resize", update)
-      home.removeEventListener("home-transition-change", update)
+      stop()
+      observer.disconnect()
       motion.removeEventListener("change", onMotionChange)
     }
   }, [])

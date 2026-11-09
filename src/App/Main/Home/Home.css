@@ -150,7 +150,7 @@
   font-family: "Google Sans Code", monospace;
   font-size: clamp(13px, 2.22vw, 32px);
   line-height: 1.25;
-  padding: clamp(40px, 4.4vw, 64px) 3.125vw 6em;
+  padding: clamp(20px, 2.2vw, 32px) 3.125vw 6em;
 }
 .home-editor-line {
   display: grid;
@@ -172,7 +172,7 @@
   color: #f74666;
 }
 .home-terminal-command {
-  margin-top: max(3em, calc(clamp(180px, 55svh, 720px) - 3em));
+  margin-top: max(3em, calc(clamp(168px, 50svh, 660px) - 3em));
   min-height: 2.5em;
   line-height: 1.5;
   overflow-wrap: anywhere;
