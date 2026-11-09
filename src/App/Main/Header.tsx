@@ -1,118 +1,83 @@
-import cn from "classnames"
-import { Link, useLocation, useNavigate } from "react-router-dom"
-import { useEffect, useRef, useState } from "react"
-import { projectPages } from "./projects"
+import { Link, useLocation } from "react-router-dom"
+import { useEffect, useState } from "react"
+import "./ScrollReveal.css"
+
+const sections = ["home", "projects", "experience", "about"]
 
 const Header = (): JSX.Element => {
-  const navigate = useNavigate()
   const location = useLocation()
-  const [isProjectMenuOpen, setIsProjectMenuOpen] = useState(false)
-  const projectMenu = useRef<HTMLDivElement>(null)
-  const projectTrigger = useRef<HTMLButtonElement>(null)
-
+  const [active, setActive] = useState("home")
+  const [terminalVisible, setTerminalVisible] = useState(false)
   useEffect(() => {
-    setIsProjectMenuOpen(false)
-  }, [location.pathname, location.search])
-
-  useEffect(() => {
-    if (!isProjectMenuOpen) return
-    const closeOutside = (event: PointerEvent) => {
-      if (!projectMenu.current?.contains(event.target as Node)) {
-        setIsProjectMenuOpen(false)
-      }
+    if (location.pathname !== "/") return
+    const update = () => {
+      const terminal = document
+        .getElementById("home-terminal")
+        ?.getBoundingClientRect()
+      const hero = document.querySelector(".home-page")?.getBoundingClientRect()
+      setTerminalVisible(
+        Boolean(
+          hero &&
+            hero.top <= -hero.height * 0.36 &&
+            terminal &&
+            terminal.bottom > 140,
+        ),
+      )
+      setActive(
+        sections
+          .filter(id => {
+            const section = document.getElementById(id)
+            return section && section.getBoundingClientRect().top <= 160
+          })
+          .pop() || "home",
+      )
     }
-    document.addEventListener("pointerdown", closeOutside)
-    return () => document.removeEventListener("pointerdown", closeOutside)
-  }, [isProjectMenuOpen])
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    return () => window.removeEventListener("scroll", update)
+  }, [location.pathname])
 
-  const handleOnClickHome = (): void => {
-    navigate("/")
+  if (location.pathname !== "/") {
+    return (
+      <header className="project-back-header">
+        <Link className="project-back-link" to="/#projects">
+          <span aria-hidden="true">←</span> Back to projects
+        </Link>
+      </header>
+    )
   }
-  const handleMouseEnterProjects = (): void => {
-    setIsProjectMenuOpen(true)
-  }
-  const handleMouseLeaveProjects = (): void => {
-    setIsProjectMenuOpen(false)
-  }
-  const handleOnClickAbout = (): void => {
-    navigate("about")
-  }
-  const handleOnClickExperience = (): void => {
-    navigate("experience")
-  }
-
-  const hoverStyle = "hover:text-accent-purple-light"
 
   return (
-    <div className="flex flex-row w-screen top-0 justify-between items-center bg-customBlack px-4 md:px-16 lg:px-24 py-8 text-customWhite">
-      <button className="w-fit h-fit" onClick={handleOnClickHome}>
-        <div className="w-12 h-12 ml-4 rounded-full bg-customWhite visible sm:hidden text-accent-purple-light text-center flex justify-center font-semibold text-md">
-          E
-        </div>
-        <p className={cn("text-base sm:text-2xl hidden sm:inline", hoverStyle)}>
-          Emily Ren Jackson
-        </p>
-      </button>
-      <div className="flex flex-row space-x-4 md:space-x-8">
-        <div
-          ref={projectMenu}
-          className="relative"
-          onMouseEnter={handleMouseEnterProjects}
-          onMouseLeave={handleMouseLeaveProjects}
-          onBlur={event => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node)) {
-              setIsProjectMenuOpen(false)
+    <header
+      data-section={location.pathname === "/" ? active : undefined}
+      className={`portfolio-header ${location.pathname === "/" && (active === "experience" || terminalVisible) ? "portfolio-header-dark" : ""}`}
+    >
+      <nav className="load-reveal" aria-label="Main navigation">
+        {sections.map(section => (
+          <Link
+            key={section}
+            to={`/#${section}`}
+            aria-current={
+              location.pathname === "/" && active === section
+                ? "location"
+                : undefined
             }
-          }}
-          onKeyDown={event => {
-            if (event.key === "Escape") {
-              setIsProjectMenuOpen(false)
-              projectTrigger.current?.focus()
-            }
-          }}
-        >
-          <button
-            ref={projectTrigger}
-            className="w-fit h-fit"
-            onClick={() => setIsProjectMenuOpen(open => !open)}
-            aria-expanded={isProjectMenuOpen}
-            aria-controls="project-dropdown"
+            onClick={() => {
+              if (location.pathname === "/" && location.hash === `#${section}`)
+                document.getElementById(section)?.scrollIntoView({
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "auto"
+                    : "smooth",
+                })
+            }}
           >
-            <p className={cn(hoverStyle)}>Projects</p>
-          </button>
-          {isProjectMenuOpen && (
-            <div className="absolute z-20 pt-4 -translate-x-1/2 left-1/2 w-max max-w-[calc(100vw-32px)]">
-              <nav
-                id="project-dropdown"
-                aria-label="Projects"
-                className="bg-customBlack px-6 py-4 flex flex-col border-2 border-accent-purple-light rounded-lg items-start gap-2 max-h-[70vh] overflow-y-auto text-sm md:text-base"
-              >
-                {projectPages.map(project => (
-                  <Link
-                    key={project.title}
-                    to={project.to}
-                    onClick={() => setIsProjectMenuOpen(false)}
-                    className={cn(
-                      hoverStyle,
-                      "block py-1 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-purple-light",
-                    )}
-                  >
-                    {project.title}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          )}
-        </div>
-        <button className="w-fit h-fit" onClick={handleOnClickExperience}>
-          <p className={cn(hoverStyle)}>Experience</p>
-        </button>
-        <button className="w-fit h-fit" onClick={handleOnClickAbout}>
-          <p className={cn(hoverStyle)}>About</p>
-        </button>
-      </div>
-    </div>
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </Link>
+        ))}
+      </nav>
+    </header>
   )
 }
-
 export default Header

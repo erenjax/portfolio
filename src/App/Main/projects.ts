@@ -15,18 +15,18 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Trip Jam",
-    category: "Product Design & Development",
-    date: "2026",
-    to: "/development/tripjam",
-    image: "/Development/trip-jam/board.png",
-  },
-  {
     title: "Evolv",
     category: "Product Design & Development",
     date: "2025",
     to: "/experience/evolv",
     image: "/Development/evolv/imgReplaceFillWithYourScreen.png",
+  },
+  {
+    title: "Trip Jam",
+    category: "Product Design & Development",
+    date: "2026",
+    to: "/development/tripjam",
+    image: "/Development/trip-jam/board.png",
   },
   {
     title: "Nordle",
@@ -54,8 +54,8 @@ export const projects: Project[] = [
 ]
 
 export const projectPages = [
-  { title: "Trip Jam", to: "/development/tripjam" },
   { title: "Evolv", to: "/experience/evolv" },
+  { title: "Trip Jam", to: "/development/tripjam" },
   { title: "Nordle", to: "/development/nordle" },
   { title: "Graphic Design", to: "/design/graphicDesign" },
 ]

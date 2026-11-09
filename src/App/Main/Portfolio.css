@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Google+Sans+Code:wght@400;500&display=swap");
+.portfolio-page {
+  font-family: Inter, sans-serif;
+  color: #000;
+}
+.portfolio-page > section {
+  scroll-margin-top: 0;
+}
+.portfolio-header {
+  position: fixed;
+  z-index: 50;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 24px);
+  font-family: Inter, sans-serif;
+}
+.portfolio-header nav {
+  display: flex;
+  gap: 21px;
+  border: 1.75px solid #000;
+  border-radius: 100px;
+  padding: 7px;
+  background: #f7f5e8ee;
+  backdrop-filter: blur(12px);
+}
+.portfolio-header a {
+  border-radius: 100px;
+  padding: 14px 28px;
+  color: #000;
+  font-size: 21px;
+  transition: background 0.2s;
+}
+.portfolio-header a:hover,
+.portfolio-header a[aria-current] {
+  background: #d9d9d9;
+}
+.portfolio-header-dark nav {
+  color: #fff;
+  border-color: #fff;
+  background: #292824ee;
+}
+.portfolio-header-dark a {
+  color: white;
+}
+.portfolio-header-dark a:hover,
+.portfolio-header-dark a[aria-current] {
+  color: #292824;
+}
+.portfolio-header a:focus-visible,
+.portfolio-page a:focus-visible,
+.portfolio-page button:focus-visible {
+  outline: 3px solid #4496d4;
+  outline-offset: 4px;
+}
+.projects-page {
+  background: #ffe4fb;
+}
+.project-feature {
+  position: relative;
+  min-height: 66.8vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  padding: 18.5vw 0 16.7vw 6.94vw;
+}
+.project-feature-copy {
+  position: relative;
+  z-index: 2;
+  padding-right: 24px;
+}
+.project-feature h2 {
+  font-size: clamp(48px, 6.67vw, 96px);
+  line-height: 1.2;
+  font-weight: 500;
+}
+.project-feature-copy p {
+  font-size: clamp(20px, 2.5vw, 36px);
+  line-height: 1.35;
+  margin: 26px 0 28px;
+}
+.project-feature-copy > a {
+  font-size: clamp(18px, 1.67vw, 24px);
+  font-weight: 600;
+}
+.project-feature-copy > a:hover {
+  text-decoration: underline;
+}
+.project-shape {
+  display: block;
+  max-width: none;
+}
+.project-feature-art {
+  position: relative;
+  display: block;
+  width: 54.9vw;
+  height: 31.42vw;
+}
+.project-feature-art > .project-shape {
+  width: 100%;
+  height: 100%;
+}
+.project-preview {
+  position: absolute;
+  width: 66%;
+  height: 70%;
+  top: 15%;
+  left: 22%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.project-feature-art:hover .project-preview {
+  transform: scale(1.04);
+}
+.project-shape-top {
+  position: absolute;
+  left: 68.09%;
+  top: -8.72vw;
+  width: 40.49vw;
+  height: 21.04vw;
+}
+.project-shape-bottom {
+  position: absolute;
+  left: 18.75%;
+  top: 56.13vw;
+  width: 75.42vw;
+  height: 31.41vw;
+}
+.portfolio-page .about-page {
+  background: #f7f5e8;
+  color: #000;
+  padding-top: 100px;
+}
+.portfolio-page .about-title,
+.portfolio-page .about-content p {
+  color: #000;
+}
+.home-layout .site-footer {
+  background: #f7f5e8;
+  color: #000;
+}
+.project-layout {
+  padding-top: 128px;
+}
+.project-back-header {
+  position: fixed;
+  top: 28px;
+  left: clamp(20px, 4vw, 64px);
+  z-index: 50;
+  font-family: Inter, sans-serif;
+}
+.project-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #c5c2fa;
+  font-size: 18px;
+  font-weight: 600;
+}
+.project-back-link:hover {
+  text-decoration: underline;
+}
+.project-back-link:focus-visible {
+  outline: 3px solid #4496d4;
+  outline-offset: 4px;
+}
+.about-resume {
+  background: #f7f5e8;
+  padding: 0 24px 80px;
+  text-align: center;
+}
+.about-resume button {
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: 18px 48px;
+  font-size: 24px;
+}
+.about-resume button:hover {
+  background: #d9d9d9;
+}
+@media (max-width: 700px) {
+  .project-back-header {
+    top: 16px;
+  }
+  .project-back-link {
+    font-size: 16px;
+  }
+  .portfolio-header {
+    top: 16px;
+  }
+  .portfolio-header nav {
+    gap: 2px;
+    padding: 5px;
+  }
+  .portfolio-header a {
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+  .portfolio-page > section {
+    scroll-margin-top: 0;
+  }
+  .project-feature {
+    min-height: 760px;
+    padding: 100px 24px 120px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .project-feature-art {
+    width: 110%;
+    height: 58vw;
+  }
+  .project-feature-copy p {
+    margin: 20px 0;
+  }
+  .project-shape-top {
+    top: -40px;
+    width: 60vw;
+    height: auto;
+  }
+  .project-shape-bottom {
+    top: auto;
+    bottom: -80px;
+    width: 100vw;
+    height: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-preview {
+    transition: none;
+  }
+}
+
+.portfolio-header[data-section="projects"] nav {
+  background: #ffe4fbee;
+}
