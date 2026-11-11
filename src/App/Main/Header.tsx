@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "./ScrollReveal.css"
+import { projects } from "./projects"
 
 const sections = ["home", "projects", "experience", "about"]
 
@@ -38,9 +39,17 @@ const Header = (): JSX.Element => {
   }, [location.pathname])
 
   if (location.pathname !== "/") {
+    const project = projects.find(
+      project =>
+        project.to === location.pathname ||
+        (project.title === "Evolv" &&
+          location.pathname === "/development/evolv"),
+    )
+    const projectId = project?.to.split("/").pop()
+    const backTo = projectId ? `/?project=${projectId}#projects` : "/#projects"
     return (
       <header className="project-back-header">
-        <Link className="project-back-link" to="/#projects">
+        <Link className="project-back-link" to={backTo}>
           <span aria-hidden="true">←</span> Back to projects
         </Link>
       </header>

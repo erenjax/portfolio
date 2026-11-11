@@ -5,6 +5,7 @@ import useBackgroundTransition from "./useBackgroundTransition"
 import Projects from "./ProjectsSection"
 import Experience from "./Experience"
 import About from "./About"
+import { projects } from "./projects"
 import { openResume } from "./Experience/workHistory"
 
 const Portfolio = (): JSX.Element => {
@@ -25,9 +26,16 @@ const Portfolio = (): JSX.Element => {
   )
 }
 export const ScrollToLocation = (): null => {
-  const { pathname, hash } = useLocation()
+  const { pathname, hash, search } = useLocation()
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
+      const projectId = new URLSearchParams(search).get("project")
+      if (
+        pathname === "/" &&
+        hash === "#projects" &&
+        projects.some(project => project.to.split("/").pop() === projectId)
+      )
+        return
       if (pathname === "/" && hash) {
         document.getElementById(hash.slice(1))?.scrollIntoView({
           behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -40,7 +48,7 @@ export const ScrollToLocation = (): null => {
       }
     })
     return () => cancelAnimationFrame(frame)
-  }, [pathname, hash])
+  }, [pathname, hash, search])
   return null
 }
 export default Portfolio

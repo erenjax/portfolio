@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { projects } from "./projects"
 import "./ProjectsSection.css"
 
@@ -11,7 +11,10 @@ const clamp = (value: number, min: number, max: number) =>
 const Projects = (): JSX.Element => {
   const section = useRef<HTMLElement>(null)
   const cards = useRef<(HTMLAnchorElement | null)[]>([])
-  const [animated, setAnimated] = useState(false)
+  const { search, hash } = useLocation()
+  const [animated, setAnimated] = useState(
+    () => window.matchMedia(motionQuery).matches,
+  )
   const [active, setActive] = useState(0)
 
   useEffect(() => {
@@ -69,6 +72,32 @@ const Projects = (): JSX.Element => {
       window.removeEventListener("resize", update)
     }
   }, [animated])
+
+  useEffect(() => {
+    if (hash !== "#projects") return
+    const projectId = new URLSearchParams(search).get("project")
+    const index = projects.findIndex(
+      project => project.to.split("/").pop() === projectId,
+    )
+    if (index < 0) return
+    const frame = requestAnimationFrame(() => {
+      const element = section.current
+      if (!element) return
+      if (animated) {
+        const start = element.getBoundingClientRect().top + window.scrollY
+        const travel = Math.max(0, element.offsetHeight - window.innerHeight)
+        window.scrollTo({
+          top: start + (index / (projects.length - 1)) * travel,
+          behavior: "instant" as ScrollBehavior,
+        })
+      } else {
+        document.getElementById(`project-${projectId}`)?.scrollIntoView({
+          behavior: "instant" as ScrollBehavior,
+        })
+      }
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [animated, search, hash])
 
   const goToProject = (index: number) => {
     const element = section.current
@@ -150,7 +179,11 @@ const Projects = (): JSX.Element => {
         </div>
       ) : (
         projects.map(project => (
-          <article className="project-feature" key={project.title}>
+          <article
+            className="project-feature"
+            key={project.title}
+            id={`project-${project.to.split("/").pop()}`}
+          >
             <img
               className="project-shape project-shape-top"
               src="/figma/project-top.svg"

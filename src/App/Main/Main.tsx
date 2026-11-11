@@ -8,6 +8,8 @@ import Footer from "./Footer"
 
 import { GraphicDesign, Photography } from "./Design/designProjects"
 import { Nordle, Evolv } from "./Development/devProjects"
+import Insignia from "./Design/designProjects/GraphicDesign/Insignia"
+import OneAfternoon from "./Design/designProjects/GraphicDesign/OneAfternoon"
 import TripJam from "./Development/devProjects/TripJam"
 
 const Main = (): JSX.Element => {
@@ -30,6 +32,8 @@ const Main = (): JSX.Element => {
         <Route path="development/tripjam" element={<TripJam />} />
         <Route path="development/evolv" element={<Evolv />} />
         <Route path="design" element={<Navigate to="/#projects" replace />} />
+        <Route path="design/insignia" element={<Insignia />} />
+        <Route path="design/one-afternoon" element={<OneAfternoon />} />
         <Route path="design/graphicDesign" element={<GraphicDesign />} />
         <Route path="design/photography" element={<Photography />} />
         <Route
