@@ -55,7 +55,7 @@
   outline-offset: 4px;
 }
 .projects-page {
-  background: #ffe4fb;
+  background: #f5e9ff;
 }
 .project-feature {
   position: relative;
@@ -142,6 +142,9 @@
   color: #000;
 }
 .project-layout {
+  background: #f5e9ff;
+  color: #000;
+  min-height: 100svh;
   padding-top: 128px;
 }
 .project-back-header {
@@ -155,7 +158,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #c5c2fa;
+  color: #000;
   font-size: 18px;
   font-weight: 600;
 }
@@ -233,5 +236,35 @@
 }
 
 .portfolio-header[data-section="projects"] nav {
-  background: #ffe4fbee;
+  background: #f5e9ffee;
+}
+
+/* Adjacent sections share the scroll-driven color, including their visible edges. */
+.portfolio-page .home-section {
+  background: var(--home-exit-background, var(--home-background, #f7f5e8));
+}
+.portfolio-page .home-terminal {
+  color: var(--home-exit-foreground, #fff);
+}
+.portfolio-page .projects-page {
+  background: var(--page-background, #f5e9ff);
+  color: var(--page-foreground, #000);
+}
+.portfolio-page .experience-page {
+  background: var(--page-background, #292824);
+  color: var(--page-foreground, #fff);
+}
+.portfolio-page .about-page,
+.portfolio-page .about-resume {
+  background: var(--page-background, #f7f5e8);
+  color: var(--page-foreground, #000);
+}
+.portfolio-page .about-title,
+.portfolio-page .about-content p {
+  color: var(--page-foreground, #000);
+}
+
+.project-layout .site-footer {
+  background: #f5e9ff;
+  color: #000;
 }

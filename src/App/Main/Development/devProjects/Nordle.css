@@ -1,6 +1,6 @@
 .nordle-page {
-  background: #0D0217;
-  color: #c5c2fa;
+  background: #f5e9ff;
+  color: #000;
   font-family: Montserrat, sans-serif;
 }
 .nordle-content {
@@ -78,7 +78,7 @@
   border: 3px solid #c5c2fa;
   border-radius: 100px;
   background: #c5c2fa;
-  color: #381c3b;
+  color: #000;
   font-size: 32px;
   transition:
     background-color 300ms,
@@ -87,10 +87,10 @@
 .nordle-actions a:hover,
 .nordle-actions a:focus-visible {
   background: transparent;
-  color: #c5c2fa;
+  color: #000;
 }
 .nordle-page a:focus-visible {
-  outline: 3px solid #c5c2fa;
+  outline: 3px solid #000;
   outline-offset: 5px;
 }
 .nordle-instructions {
