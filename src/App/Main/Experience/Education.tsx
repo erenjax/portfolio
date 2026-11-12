@@ -25,7 +25,7 @@ const Education = (): JSX.Element => (
     className="experience-panel experience-education"
     aria-labelledby="education-title"
   >
-    <h2 id="education-title">Education</h2>
+    <h2 id="education-title">&lt;education&gt;</h2>
     <div className="experience-rows">
       {education.map(item => (
         <div className="experience-row" key={item.date}>

@@ -1,4 +1,4 @@
-import { LinkedInLogo } from "../../Assets/logos"
+import { LinkedInLogo, MailIcon } from "../../Assets/logos"
 import "./Footer.css"
 
 const Footer = (): JSX.Element => (
@@ -10,15 +10,24 @@ const Footer = (): JSX.Element => (
           erenjax@gmail.com
         </a>
       </div>
-      <a
-        className="site-footer-linkedin"
-        href="https://www.linkedin.com/in/emily-ren-jackson-32517a202/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit Emily Ren Jackson on LinkedIn"
-      >
-        <LinkedInLogo classname="w-full h-full" />
-      </a>
+      <div className="site-footer-socials">
+        <a
+          className="site-footer-social site-footer-mail"
+          href="mailto:erenjax@gmail.com"
+          aria-label="Email Emily Ren Jackson"
+        >
+          <MailIcon classname="w-full h-full" />
+        </a>
+        <a
+          className="site-footer-social site-footer-linkedin"
+          href="https://www.linkedin.com/in/emily-ren-jackson-32517a202/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Emily Ren Jackson on LinkedIn"
+        >
+          <LinkedInLogo classname="w-full h-full" />
+        </a>
+      </div>
     </div>
   </footer>
 )

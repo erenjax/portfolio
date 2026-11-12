@@ -1,7 +1,9 @@
 .scroll-reveal-active {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 650ms ease-out, transform 650ms ease-out;
+  transition:
+    opacity 650ms ease-out,
+    transform 650ms ease-out;
 }
 .scroll-reveal-active.scroll-reveal-visible {
   opacity: 1;
@@ -12,5 +14,33 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .load-reveal {
+    animation: load-reveal 650ms ease-out both;
+  }
+  .home-title-entry {
+    animation-delay: 80ms;
+  }
+  .home-image-entry {
+    animation-delay: 160ms;
+  }
+  .home-tagline-entry {
+    animation-delay: 240ms;
+  }
+  .load-reveal:focus-within {
+    animation: none;
+  }
+}
+@keyframes load-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

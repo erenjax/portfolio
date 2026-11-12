@@ -1,6 +1,6 @@
 .tripjam-page {
-  background: #0d0217;
-  color: #c5c2fa;
+  background: #f5e9ff;
+  color: #000;
   font-family: Montserrat, sans-serif;
 }
 .tripjam-content {
@@ -55,7 +55,7 @@
   border: 3px solid #c5c2fa;
   border-radius: 100px;
   background: #c5c2fa;
-  color: #0d0217;
+  color: #000;
   font-size: 32px;
   transition:
     background-color 300ms,
@@ -64,10 +64,10 @@
 .tripjam-actions a:hover,
 .tripjam-actions a:focus-visible {
   background: transparent;
-  color: #c5c2fa;
+  color: #000;
 }
 .tripjam-actions a:focus-visible {
-  outline: 3px solid #c5c2fa;
+  outline: 3px solid #000;
   outline-offset: 5px;
 }
 .tripjam-features {

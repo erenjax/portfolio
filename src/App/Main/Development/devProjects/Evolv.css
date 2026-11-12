@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Inter:wght@400&family=Montserrat:wght@400;500;600;700&family=Work+Sans:wght@400;500&display=swap");
 .evolv-page {
-  --evolv-dark: #0D0217;
-  --evolv-light: #c5c2fa;
-  background: #0D0217;
+  --evolv-dark: #f5e9ff;
+  --evolv-light: #000;
+  background: #f5e9ff;
   color: var(--evolv-light);
   font-family: Montserrat, sans-serif;
 }
@@ -73,18 +73,18 @@
   padding: 4px 4px 32px;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  scrollbar-color: var(--evolv-light) #0d0217;
+  scrollbar-color: var(--evolv-light) #f5e9ff;
 }
 .evolv-gallery-track::-webkit-scrollbar {
   height: 10px;
 }
 .evolv-gallery-track::-webkit-scrollbar-track {
-  background: #0d0217;
+  background: #f5e9ff;
   border-radius: 100px;
 }
 .evolv-gallery-track::-webkit-scrollbar-thumb {
   background: var(--evolv-light);
-  border: 2px solid #0d0217;
+  border: 2px solid #f5e9ff;
   border-radius: 100px;
 }
 .evolv-card {
@@ -95,7 +95,7 @@
   border: 4px solid var(--evolv-light);
   border-radius: 32px;
   overflow: hidden;
-  background: #0D0217;
+  background: #f5e9ff;
   text-align: left;
   scroll-snap-align: center;
 }
@@ -106,7 +106,7 @@
   flex: 1;
   min-height: 0;
   overflow: hidden;
-  background: #0D0217;
+  background: #f5e9ff;
 }
 .evolv-card-crop {
   display: block;
@@ -125,7 +125,7 @@
   flex: none;
   height: 121px;
   padding: 16px;
-  background: #0d0217;
+  background: #f5e9ff;
   font-family: Inter, sans-serif;
   font-size: 20px;
   line-height: 24px;
@@ -148,7 +148,7 @@
 }
 .evolv-page a:focus-visible,
 .evolv-page button:focus-visible {
-  outline: 3px solid #c5c2fa;
+  outline: 3px solid #000;
   outline-offset: 5px;
 }
 .evolv-dialog {
@@ -265,3 +265,15 @@ body:has(.evolv-dialog[open]) {
 .evolv-arrow-next {
   transform: rotate(90deg);
 }
+.evolv-related-work {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgb(0 0 0 / 15%);
+  gap: 32px;
+}
+.evolv-related-work h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+

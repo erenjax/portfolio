@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import "./Evolv.css"
-import useScrollReveal from "../../useScrollReveal"
+import CaseStudy from "../../CaseStudy"
+import { caseStudies, evolvRelatedWork } from "../../caseStudyContent"
 
 const asset = (name: string) => `/Development/evolv/${name}.png`
 const previewBounds = [
@@ -29,50 +30,39 @@ const gallery = [
   image: `slide-${index + 1}`,
   preview: previewBounds[index],
 }))
-const description =
-  "When Evolv expanded from a single walk-through scanner to adding an x-ray system, the plan was to monitor both from the existing tablet interface unchanged. In a security setting, where usability is tied directly to safety, I saw real risks in that approach. As project lead for the tablet, I extended our API to communicate with multiple systems at once, reworked the client-side state management for incoming websocket messages, and made the case for a full redesign. Operators' fear of a steeper learning curve was the main concern, so I worked with product and engineering to understand it, then led the project through wireframes, prototypes, and regular stakeholder demos. The redesigned interface has launched to strong customer feedback, and I'm continuing to run user tests to learn how operators actually use it."
-
 const Evolv = (): JSX.Element => {
-  const heroImage = useScrollReveal()
   const [selected, setSelected] = useState(0)
   const dialog = useRef<HTMLDialogElement>(null)
   const current = gallery[selected]
   const move = (direction: number) =>
     setSelected(index => (index + direction + gallery.length) % gallery.length)
   return (
-    <article className="evolv-page">
-      <div className="evolv-content">
-        <section className="evolv-hero" aria-labelledby="evolv-title">
-          <h1 id="evolv-title">Security Operator Tablet</h1>
-          <div className="evolv-metadata">
-            <p>2025</p>
-            <p>Evolv Technology</p>
-            <p>Lead Designer and Developer</p>
-          </div>
-          <img
-            ref={heroImage}
-            className="evolv-tablet evolv-hero-tablet"
-            src="/Development/evolv/hero.jpg"
-            alt="Evolv tablet showing connected security systems and System Ready status"
-          />
-        </section>
-        <p className="evolv-description">{description}</p>
-        <section
-          className="evolv-screens"
-          aria-label="Tablet application screens"
-        >
+    <CaseStudy
+      content={caseStudies.evolv}
+      hero={
+        <img
+          className="evolv-tablet"
+          src="/Development/evolv/hero.jpg"
+          alt="Evolv tablet showing connected security systems and System Ready status"
+        />
+      }
+      secondary={
+        <>
           <img
             className="evolv-tablet"
             src={asset("alert-queue")}
             alt="Light mode alert queue with security camera views"
+            loading="lazy"
           />
           <img
             className="evolv-tablet"
             src={asset("settings")}
             alt="Dark mode tablet appearance, brightness, and volume settings"
+            loading="lazy"
           />
-        </section>
-      </div>
+        </>
+      }
+    >
       <section className="evolv-gallery" aria-labelledby="gallery-title">
         <h2 id="gallery-title">Design Process Gallery</h2>
         <div className="evolv-gallery-track">
@@ -114,6 +104,20 @@ const Evolv = (): JSX.Element => {
             </button>
           ))}
         </div>
+      </section>
+      <section
+        className="evolv-related-work case-study-narrative"
+        aria-labelledby="evolv-related-title"
+      >
+        <h2 id="evolv-related-title">Related Evolv Work</h2>
+        {evolvRelatedWork.map(project => (
+          <section key={project.title}>
+            <h3>{project.title}</h3>
+            {project.paragraphs.map(paragraph => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </section>
+        ))}
       </section>
       <dialog
         ref={dialog}
@@ -166,7 +170,7 @@ const Evolv = (): JSX.Element => {
           </button>
         </div>
       </dialog>
-    </article>
+    </CaseStudy>
   )
 }
 export default Evolv
