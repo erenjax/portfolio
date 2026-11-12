@@ -12,6 +12,7 @@ export type CaseStudyContent = {
   impact: string
   process: string[]
   solution: string
+  additionalSections?: { title: string; paragraphs: string[] }[]
 }
 
 type Props = {
@@ -87,6 +88,14 @@ const CaseStudy = ({
         <h2>The Solution</h2>
         <p>{content.solution}</p>
       </section>
+      {content.additionalSections?.map(section => (
+        <section key={section.title}>
+          <h2>{section.title}</h2>
+          {section.paragraphs.map(paragraph => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </section>
+      ))}
     </div>
     {children && <div className="case-study-extras">{children}</div>}
   </article>

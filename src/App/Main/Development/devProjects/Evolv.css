@@ -265,3 +265,15 @@ body:has(.evolv-dialog[open]) {
 .evolv-arrow-next {
   transform: rotate(90deg);
 }
+.evolv-related-work {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgb(0 0 0 / 15%);
+  gap: 32px;
+}
+.evolv-related-work h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+

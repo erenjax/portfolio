@@ -5,20 +5,29 @@ export const caseStudies: Record<string, CaseStudyContent> = {
     title: "Security Operator Tablet",
     organization: "Evolv Technology",
     role: "Lead Designer and Developer",
-    skills: ["TypeScript", "React", "Figma", "API integration", "User testing"],
+    skills: [
+      "Interaction design",
+      "Figma",
+      "React / TypeScript",
+      "API integration",
+      "WebSocket state management",
+      "User testing",
+    ],
     year: "2025",
     overview:
-      "I led the design and development of a security operator tablet interface as Evolv expanded from a single walk-through scanner to an additional x-ray system.",
+      "As a frontend software engineer and tablet project lead at Evolv Technology, I led a redesign of the interface security operators use every day. The company was expanding from a walk-through scanner to an ecosystem that also included an x-ray system. I brought design and implementation together to support monitoring multiple systems from one tablet.",
     challenge:
-      "The original plan was to monitor both systems through the existing tablet interface unchanged. In a security setting, usability is tied directly to safety. The redesign also needed to address operators’ concerns about a steeper learning curve.",
+      "The initial task was to extend the tablet’s API to communicate with multiple systems. After meeting with the product team, I identified risks in adding new capabilities to the existing interface and proposed a full redesign, including a modernized design system. In a high-stakes security setting, operators need to understand what is happening and how to respond. The challenge was to accommodate a more complex system while keeping the experience clear.",
     impact:
-      "The redesigned interface has launched to strong customer feedback. Ongoing user tests are helping me understand how operators use it in practice.",
+      "The redesigned interface launched as part of a major release and received strong customer feedback. User testing became a focus for understanding how operators interact with the new experience and informing further refinements.",
     process: [
-      "I worked with product and engineering to understand operators’ concerns, then led the project through wireframes, prototypes, and regular stakeholder demos.",
-      "Alongside the design work, I extended the API to communicate with multiple systems at once and reworked client-side state management for incoming websocket messages.",
+      "I reframed the work from an API extension into an opportunity to rethink the operator experience. I created wireframes and mockups, ran regular stakeholder demos, and iterated on feedback with support from design experts. Those conversations helped bring product and engineering along with the proposed changes.",
+      "In parallel, I worked closely with the embedded systems team to establish communication between one tablet and multiple devices. I extended the API and reworked client-side state management to organize incoming WebSocket messages from the connected systems.",
+      "Throughout the redesign, I used documentation and regular demos to keep product and engineering aligned on the evolving interface. Alongside delivery, I focused on user testing to learn how people would interact with the redesigned product.",
     ],
     solution:
-      "A redesigned tablet experience brings connected systems, the alert queue, and settings into one interface, supporting operators as they monitor multiple security systems.",
+      "The redesigned tablet brings connected systems, the alert queue, and settings into one experience. Updated interface patterns support the expanded product ecosystem, while the underlying API and state management allow the tablet to communicate with multiple systems. Owning both the interface and its implementation let me carry design decisions through to the working product.",
+
   },
   tripjam: {
     title: "Trip Jam",
@@ -42,7 +51,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       "The working application lets a group search, drag, vote, sketch, and chat in real time, then turn its decisions into a day-by-day itinerary that can be downloaded as a PDF.",
     process: [
       "The team explored the visual system in Figma while building collaboration, search, and voting features.",
-      "We refined the designs against the working interactions, bringing the board, cards, sidebar, chat, and itinerary into one cohesive experience.",
+      "As a developer on the team, I help implement the interaction design, turning the team’s ideas into working interactions across the shared planning canvas. I connected the Google Maps and Grok AI APIs to support place discovery and AI-generated itineraries.",
+      "One of the final steps was integrating the designer’s prototype from Cursor directly into our codebase, working out the AI generated kinks, adding fun fairs and details.",
     ],
     solution:
       "Google Places helps travelers find hotels, attractions, and restaurants to add to the board. Live cursors, notes, drawings, and voting support shared decisions. Grok uses the board’s cards, votes, and connections to generate an itinerary.",
@@ -68,7 +78,7 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   },
   insignia: {
     title: "Insignia",
-    organization: "Graphic Design Course",
+    organization: "Wesleyan University · Graphic Design Course",
     role: "Designer",
     skills: [
       "Adobe Illustrator",
@@ -92,7 +102,7 @@ export const caseStudies: Record<string, CaseStudyContent> = {
   },
   oneAfternoon: {
     title: "One Afternoon",
-    organization: "Digital Art Course",
+    organization: "Wesleyan University · Digital Art Course",
     role: "Designer",
     skills: [
       "Adobe Photoshop",
@@ -114,3 +124,25 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       "A short comic uses a consistent visual treatment to connect the individual images into One Afternoon.",
   },
 }
+
+export const evolvRelatedWork = [
+  {
+    title: "Diagnostics Report Card",
+    paragraphs: [
+      "I designed and implemented a diagnostics Report Card across two digital products. It turns a large JSON response containing more than 30 tests into an organized, expandable view with clear result indicators. QA, developers, and field service reported using it instead of digging through logs, saving time and effort during troubleshooting.",
+    ],
+  },
+  {
+    title: "Clearer Errors and Self-Service Troubleshooting",
+    paragraphs: [
+      "I replaced raw error messages for common issues with plain-language explanations and QR codes linking to troubleshooting instructions. The team reported fewer service calls for those issues, allowing service staff to focus on problems that needed their expertise.",
+    ],
+  },
+  {
+    title: "Standalone X-Ray Tablet",
+    paragraphs: [
+      "For the new x-ray system, I supported a different device within the existing tablet codebase. I worked closely with the embedded systems team to coordinate WebSocket messages and endpoints that identified the connected system. I reviewed existing features for compatibility and hid capabilities that did not apply.",
+      "The resulting tablet allowed operators to view alerted bag and x-ray images while monitoring the system, and gave the team a working interface for testing.",
+    ],
+  },
+]

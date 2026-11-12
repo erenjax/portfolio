@@ -62,11 +62,11 @@
 .case-study-narrative {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   min-width: 0;
 }
 .case-study-overview .case-study-narrative > p {
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 .case-study-label,
 .case-study-narrative h2 {
@@ -75,16 +75,16 @@
 .case-study-narrative section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
 }
 .case-study-metadata {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   min-width: 0;
 }
 .case-study dd {
-  margin: 8px 0 0;
+  margin: 0;
   font-size: 16px;
   line-height: 42px;
   overflow-wrap: anywhere;
@@ -93,7 +93,7 @@
   gap: 32px;
 }
 .case-study-details section {
-  gap: 8px;
+  gap: 0;
 }
 .case-study-details section:last-child > p {
   line-height: 42px;

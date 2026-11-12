@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import "./Evolv.css"
 import CaseStudy from "../../CaseStudy"
-import { caseStudies } from "../../caseStudyContent"
+import { caseStudies, evolvRelatedWork } from "../../caseStudyContent"
 
 const asset = (name: string) => `/Development/evolv/${name}.png`
 const previewBounds = [
@@ -104,6 +104,20 @@ const Evolv = (): JSX.Element => {
             </button>
           ))}
         </div>
+      </section>
+      <section
+        className="evolv-related-work case-study-narrative"
+        aria-labelledby="evolv-related-title"
+      >
+        <h2 id="evolv-related-title">Related Evolv Work</h2>
+        {evolvRelatedWork.map(project => (
+          <section key={project.title}>
+            <h3>{project.title}</h3>
+            {project.paragraphs.map(paragraph => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </section>
+        ))}
       </section>
       <dialog
         ref={dialog}

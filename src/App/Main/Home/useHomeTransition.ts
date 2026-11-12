@@ -14,6 +14,7 @@ const useHomeTransition = (home: RefObject<HTMLElement>): void => {
       const height = hero.offsetHeight
       const scroll = Math.max(0, -element.getBoundingClientRect().top)
       const progress = clamp((scroll / height - 0.03) / 0.67)
+      document.documentElement.classList.toggle("home-purple-cursor", progress === 0)
       const compact = window.matchMedia("(max-width: 700px)").matches
       const eased = motion.matches
         ? Number(progress >= 0.5)
@@ -54,6 +55,7 @@ const useHomeTransition = (home: RefObject<HTMLElement>): void => {
     window.addEventListener("resize", update)
     motion.addEventListener("change", update)
     return () => {
+      document.documentElement.classList.remove("home-purple-cursor")
       cancelAnimationFrame(frame)
       window.removeEventListener("scroll", update)
       window.removeEventListener("resize", update)

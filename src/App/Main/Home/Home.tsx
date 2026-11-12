@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import useHomeTransition from "./useHomeTransition"
 import HomeTerminal from "./HomeTerminal"
+import HomeCursorChat from "./HomeCursorChat"
 import "../ScrollReveal.css"
 import "./Home.css"
 
@@ -48,6 +49,7 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </div>
+      <HomeCursorChat />
       <HomeTerminal />
     </section>
   )
